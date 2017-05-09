@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>MCS-51单片机指令英文全称 | fancy❤。。。</title>
+  <title>实验一：简单汇编程序 | fancy❤。。。</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文章旨在帮助初学单片机时熟悉各个指令，因为大多数指令都是英文缩写而来，如果了解了其英文全称，便能更快的记忆。 MCS-51单片机指令系统集（英文注释） 按功能分为五大类： （1）数据传送类指令（7种助记符） MOV（英文为Move）：对内部数据寄存器RAM和特殊功能寄存器SFR的数据进行传送； MOVC（Move Code）读取程序存储器数据表格的数据传送； MOVX (Move Externa">
+  <meta name="description" content="首先讲一下51单片机为什么不能直接进行16位的二进制数运算？    在第一章第一节51单片机内部结构概述中提到，51单片机是一个8位的CPU，所以一次操作最大的无符号8位二进制数是1111 1111(B)，化成16进制表示就是0FF(H)，也就是十进制中的255(D)。所以对一个16位的二进制数，它是采用把16位的二进制数分成两个8位的二进制数去存储，计算后的结果也是以两个8位的二进制存储到两个相">
 <meta name="keywords" content="单片机">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MCS-51单片机指令英文全称">
-<meta property="og:url" content="http://yoursite.com/2017/04/22/MCS-51单片机指令英文全称/index.html">
+<meta property="og:title" content="实验一：简单汇编程序">
+<meta property="og:url" content="http://yoursite.com/2017/05/09/16位二进制减法运算程序/index.html">
 <meta property="og:site_name" content="fancy❤。。。">
-<meta property="og:description" content="本文章旨在帮助初学单片机时熟悉各个指令，因为大多数指令都是英文缩写而来，如果了解了其英文全称，便能更快的记忆。 MCS-51单片机指令系统集（英文注释） 按功能分为五大类： （1）数据传送类指令（7种助记符） MOV（英文为Move）：对内部数据寄存器RAM和特殊功能寄存器SFR的数据进行传送； MOVC（Move Code）读取程序存储器数据表格的数据传送； MOVX (Move Externa">
-<meta property="og:updated_time" content="2017-04-22T14:04:17.175Z">
+<meta property="og:description" content="首先讲一下51单片机为什么不能直接进行16位的二进制数运算？    在第一章第一节51单片机内部结构概述中提到，51单片机是一个8位的CPU，所以一次操作最大的无符号8位二进制数是1111 1111(B)，化成16进制表示就是0FF(H)，也就是十进制中的255(D)。所以对一个16位的二进制数，它是采用把16位的二进制数分成两个8位的二进制数去存储，计算后的结果也是以两个8位的二进制存储到两个相">
+<meta property="og:updated_time" content="2017-05-09T14:18:01.747Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MCS-51单片机指令英文全称">
-<meta name="twitter:description" content="本文章旨在帮助初学单片机时熟悉各个指令，因为大多数指令都是英文缩写而来，如果了解了其英文全称，便能更快的记忆。 MCS-51单片机指令系统集（英文注释） 按功能分为五大类： （1）数据传送类指令（7种助记符） MOV（英文为Move）：对内部数据寄存器RAM和特殊功能寄存器SFR的数据进行传送； MOVC（Move Code）读取程序存储器数据表格的数据传送； MOVX (Move Externa">
+<meta name="twitter:title" content="实验一：简单汇编程序">
+<meta name="twitter:description" content="首先讲一下51单片机为什么不能直接进行16位的二进制数运算？    在第一章第一节51单片机内部结构概述中提到，51单片机是一个8位的CPU，所以一次操作最大的无符号8位二进制数是1111 1111(B)，化成16进制表示就是0FF(H)，也就是十进制中的255(D)。所以对一个16位的二进制数，它是采用把16位的二进制数分成两个8位的二进制数去存储，计算后的结果也是以两个8位的二进制存储到两个相">
   
     <link rel="alternative" href="/atom.xml" title="fancy❤。。。" type="application/atom+xml">
   
@@ -154,78 +154,73 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-MCS-51单片机指令英文全称" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-16位二进制减法运算程序" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      MCS-51单片机指令英文全称
+      实验一：简单汇编程序
     </h1>
   
 
         
-        <a href="/2017/04/22/MCS-51单片机指令英文全称/" class="archive-article-date">
-  	<time datetime="2017-04-22T10:01:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-22</time>
+        <a href="/2017/05/09/16位二进制减法运算程序/" class="archive-article-date">
+  	<time datetime="2017-05-09T12:01:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>本文章旨在帮助初学单片机时熟悉各个指令，因为大多数指令都是英文缩写而来，如果了解了其英文全称，便能更快的记忆。</p>
-<p>MCS-51单片机指令系统集（英文注释）</p>
-<p>按功能分为五大类：</p>
-<p>（1）数据传送类指令（7种助记符）</p>
-<p>MOV（英文为Move）：对内部数据寄存器RAM和特殊功能寄存器SFR的数据进行传送；</p>
-<p>MOVC（Move Code）读取程序存储器数据表格的数据传送；</p>
-<p>MOVX (Move External RAM) 对外部RAM的数据传送；</p>
-<p>XCH (Exchange) 字节交换；</p>
-<p>XCHD (Exchange low-order Digit) 低半字节交换；</p>
-<p>PUSH (Push onto Stack) 入栈；</p>
-<p>POP  (Pop from Stack) 出栈；</p>
-<p>（2）算术运算类指令（8种助记符）</p>
-<p>ADD(Addition) 加法；</p>
-<p>ADDC(Add with Carry) 带进位加法；</p>
-<p>SUBB(Subtract with Borrow) 带借位减法；</p>
-<p>DA(Decimal Adjust) 十进制调整；</p>
-<p>INC(Increment) 加1；</p>
-<p>DEC(Decrement) 减1；</p>
-<p>MUL(Multiplication、Multiply) 乘法；</p>
-<p>DIV(Division、Divide) 除法；</p>
-<p>(3)逻辑运算类指令（10种助记符）</p>
-<p>ANL(AND Logic) 逻辑与；</p>
-<p>ORL(OR Logic) 逻辑或；</p>
-<p>XRL(Exclusive-OR Logic) 逻辑异或；</p>
-<p>CLR(Clear) 清零；</p>
-<p>CPL(Complement) 取反；</p>
-<p>RL(Rotate left) 循环左移；</p>
-<p>RLC(Rotate Left throught the Carry flag) 带进位循环左移；</p>
-<p>RR(Rotate Right) 循环右移；</p>
-<p>RRC (Right throught the Carry flag) 带进位循环右移；</p>
-<p>SWAP (Swap) 低4位与高4位交换；</p>
-<p>(4)控制转移类指令（17种助记符）</p>
-<p>ACALL（Absolute subroutine Call）子程序绝对调用；</p>
-<p>LCALL（Long subroutine Call）子程序长调用；</p>
-<p>RET（Return from subroutine）子程序返回；</p>
-<p>RETI（Return from Interruption）中断返回；</p>
-<p>SJMP（Short Jump）短转移；    注意！！这条指令在《单片微型计算机与接口技术（第5版）》中名称是“无条件相对转移”，但是其指令功能还是相同的。建议按“短转移”名称记忆。</p>
-<p>AJMP（Absolute Jump）绝对转移；  同上！！其在书中名称写为“短转移”，但是功能还是相同的。建议按“绝对转移”名称记忆。</p>
-<p>LJMP（Long Jump）长转移；</p>
-<p>CJNE (Compare Jump if Not Equal)比较不相等则转移；</p>
-<p>DJNZ (Decrement Jump if Not Zero)减1后不为0则转移；</p>
-<p>JZ (Jump if Zero)结果为0则转移；</p>
-<p>JNZ (Jump if Not Zero) 结果不为0则转移；</p>
-<p>JC (Jump if the Carry flag is set)有进位则转移；</p>
-<p>JNC (Jump if Not Carry)无进位则转移；</p>
-<p>JB (Jump if the Bit is set)位为1则转移；</p>
-<p>JNB (Jump if the Bit is Not set) 位为0则转移；</p>
-<p>JBC(Jump if the Bit is set and Clear the bit) 位为1则转移，并清除该位；</p>
-<p>NOP (No Operation) 空操作；</p>
-<p>（5）位操作指令（1种助记符）</p>
-<p>SETB(Set Bit) 位 置1 。</p>
-<p>内容来源于网络，侵删。</p>
+        <p>首先讲一下51单片机为什么不能直接进行16位的二进制数运算？<br>    </p><p>在第一章第一节51单片机内部结构概述中提到，51单片机是一个8位的CPU，所以一次操作最大的无符号8位二进制数是1111 1111(B)，化成16进制表示就是0FF(H)，也就是十进制中的255(D)。所以对一个16位的二进制数，它是采用把16位的二进制数分成两个8位的二进制数去存储，计算后的结果也是以两个8位的二进制存储到两个相邻的存储单元。</p><p></p>
+<p>课堂练习：编写16位二进制数的减法运算（参考16位加法程序的地址分配）。<br>要求：最终结果放入寄存器R1，R0中，并记录有借位16进制减法和无借位16进制减法运算的实验过程。<br>测试用例：<br>    case1：0412H - 0203H<br>    case2：0403H - 0212H</p>
+<p>参考程序： 16位二进制的加法运算</p>
+<pre><code>ORG 30H
+MOV 30H,#01H    ;第一个数的低8位存入30H
+MOV 31H,#02H     ;第一个数的高8位存入31H
+MOV 32H,#03H     ;第二个数的低8位存入32H（老师给的实验报告上这里打印错误）
+MOV 33H,#04H     ;第二个数的高8位存入33H（老师给的实验报告上这里打印错误）
+MOV A,30H         ;读30H数据到累加器A
+ADD A,32H         ;A与32H数据进行加法运算
+MOV R0,A         ;低8位加法结果存入R0
+MOV A,31H         ;读31H数据到累加寄存器A
+ADDC A,33H         ;带进位的加法运算
+MOV R1,A         ;高8位进位加法结果存入R1
+END
+</code></pre><p>程序分析：</p>
+<pre><code>MOV A,30H         ;读30H数据到累加器A
+ADD A,32H         ;A与32H数据进行加法运算
+MOV R0,A         ;低8位加法结果存入R0
+</code></pre><p>对于这一段程序的作用呢，其实就可以理解为<b>我们在做十进制中两位数加法的时候，先把个位两个数相加的和写下来，如果个位数和大于10(在单片机ADD指令中等同于加完之后A中的数大于0FF(H)，也就是溢出),就写下个位数和的个位数部分，再做个记号(在单片机中体现为将CY位置1)，等十位上的相加的时候再加个一(单片机中ADDC带进位相加就是这个作用)。</b></p>
+
+<pre><code>MOV A,31H         ;读31H数据到累加寄存器A
+ADDC A,33H         ;带进位的加法运算
+MOV R1,A         ;高8位进位加法结果存入R1
+</code></pre><p>这一段程序 也是就在做十进制中两位数加法的时候，将十位数相加的作用。当数据不够大的时候，也就是上一段程序A中结果不出现溢出的时候，这里用ADD替换ADDC作用也是相同的。但是当上一段程序A中结果出现溢出的时候，这里就必须使用ADDC指令了，不然结果就会出错。</p>
+
+<p>接下来我们开始写减法运算的程序。<br>在十进制中加法和减法的差别也就是一个符号的差别，51单片机的16位二进制减法运算也可以参考加法写下来，只需将ADDC指令换成SUBB指令即可，<b>但是单片机中没有对应ADD指令的不带进位的减法指令，所以对于替换ADD指令，我们仍然采用SUBB指令，只不过在这条指令前面加一条</b></p>
+<pre><code>CLR C
+</code></pre><p><b>指令。这条指令的作用就是用来清零CY位，防止CY位对SUBB指令造成的影响。</b><br>所以16位二进制数的减法运算如下：</p>
+<pre><code>ORG 30H
+MOV 30H,#01H
+MOV 31H,#02H
+MOV 32H,#03H
+MOV 33H,#04H
+MOV A,30H
+CLR C
+SUBB A,32H
+MOV R0,A
+MOV A,31H
+SUBB A,33H
+MOV R1,A
+END
+</code></pre><p>老师给的两个数据测试，第一个是不会产生溢出的，CY位一直是0，也是就PSW程序状态字中第一位一直是0。如果你实验时使用第一组数据进行单步调试时发现PSW的第一位变为了一，建议好好检查。<br>第二组数据中程序运行到第一个SUBB指令，PSW中的第一位会变为1，一直到第二个SUBB指令结束，PSW中的第一位才会重新变为0。</p>
+<p>至于程序每一步运行后，寄存器中A和PSW的状态我就不一一显示了，看懂程序后自己一步步的读可以写出来。</p>
+<p>运行结果：<br>    case1: R0 = 0F R1 = 02<br>    case2: R0 = F1 R1 = 01</p>
+<p>还有上次实验时误导了几个同学写了两个程序，在第二个SUBB之前也加了CLR C命令，这样出现的问题是不能计算会产生溢出的数据。</p>
+<p>在此表示歉意！</p>
 
       
 
@@ -326,7 +321,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/04/22/MCS-51单片机指令英文全称/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/05/09/16位二进制减法运算程序/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -340,20 +335,15 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/04/22/第一个随笔/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/04/22/MCS-51单片机指令英文全称/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          2017年4月22日17点17分
+          MCS-51单片机指令英文全称
         
       </div>
     </a>
   
-  
-    <a href="/2017/05/09/16位二进制减法运算程序/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">实验一：简单汇编程序</div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 
@@ -364,7 +354,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="MCS-51单片机指令英文全称" data-title="MCS-51单片机指令英文全称" data-url="http://yoursite.com/2017/04/22/MCS-51单片机指令英文全称/"></div>
+	<div class="ds-thread" data-thread-key="16位二进制减法运算程序" data-title="实验一：简单汇编程序" data-url="http://yoursite.com/2017/05/09/16位二进制减法运算程序/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
