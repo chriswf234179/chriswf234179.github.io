@@ -154,6 +154,94 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-实验二·分支和循环结构汇编程序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/13/实验二·分支和循环结构汇编程序/">实验二·分支和循环结构汇编程序</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/13/实验二·分支和循环结构汇编程序/" class="archive-article-date">
+  	<time datetime="2017-05-13T12:24:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本次主要学习分支和循环结构汇编程序的编写与调试。</p>
+<p>在51单片机的汇编语言中设计分支和循环程序主要是采用条件转移指令来实现的。<br>本次涉及的主要转移指令有JMP,JC,JNC,DJNC。JMP是无条件转移指令，JC是判Cy转移指令，以PSW中的进位标志Cy作为检测条件，根据Cy的情况决定是否转移。具体转移流程见下图。<br>    JC转移指令<br>    <img src="http://opwgh02dw.bkt.clouddn.com/JC.png" alt="JC转移指令"> “JC转移指令流程图”<br>    JNC转移指令<br>    <img src="http://opwgh02dw.bkt.clouddn.com/JNC.png" alt="JNC转移指令"> “JNC转移指令流程图”<br>    DJNZ转移指令<br>    <img src="http://opwgh02dw.bkt.clouddn.com/DJNZ.png" alt="DJNZ转移指令"> “DJNZ转移指令流程图”</p>
+<p>练习：数据块求和（运用循环、16位加法运算）。<br>要求：计算数据块（30H至37H）中，8个8位二进制数的和，最终结果放入R1、R0中。<br>老师给了两个数据块数值的</p>
+<p>首先我们分析题目画出流程图：<br>    <img src="http://opwgh02dw.bkt.clouddn.com/%E6%95%B0%E6%8D%AE%E5%9D%97%E6%B1%82%E5%92%8C%E6%B5%81%E7%A8%8B%E5%9B%BE.png" alt="数据块求和"> “数据块求和流程图”</p>
+<p>然后写出程序：</p>
+<pre><code>        ORG 30H
+        MOV 30H,#01H
+        MOV 31H,#02H
+        MOV 32H,#03H
+        MOV 33H,#04H
+        MOV 34H,#05H
+        MOV 35H,#06H
+        MOV 36H,#07H
+        MOV 37H,#08H
+        MOV R0,#07H     ;设置循环次数
+        MOV R1,#31H     ;循环起始位置
+        MOV R2,#00H     ;暂定和的高八位数值
+        MOV A,30H
+LOOP:    CLR C
+        ADD A,@R1
+        JNC OVER         ;Cy位为0，则跳过高八位加1
+        INC R2
+OVER:    INC R1
+        DJNZ R0,LOOP     ;循环判定R0 = 0
+        MOV R0,A
+        MOV A,R2
+        MOV R1,A
+        END
+</code></pre><p>需要注意的一点是最后将结果送R0,R1的时候，R2是不能直接送R0的，需要借助A进行传送。</p>
+<p>这只是本题的一种设计思路，思路不唯一，就不一一列举了。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">单片机</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/13/实验二·分支和循环结构汇编程序/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-16位二进制减法运算程序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
